@@ -1,7 +1,7 @@
 import isEmpty from '../src/isEmpty.js'
 import {expect} from 'chai';
 
-describe('drop', function(){
+describe('isEmpty', function(){
     it('try with null -> true?', function(){
         expect(true).equal(isEmpty(null));
     })
@@ -19,5 +19,11 @@ describe('drop', function(){
     })
     it('try with { \'a\': 1 } -> false?', function(){
         expect(false).equal(isEmpty({ 'a': 1 }));
+    })
+    it('try with empty array -> false?', function(){
+        expect(true).equal(isEmpty([]));
+    })
+    it('try with empty array -> false?', function(){
+        expect(true).equal({});
     })
 })

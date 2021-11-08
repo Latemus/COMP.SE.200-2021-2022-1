@@ -8,7 +8,7 @@ describe("eq", function(){
     it("object and object -> true?", function(){
         expect(true).equal(eq(object, object));
     })
-    it("object and other -> true?", function(){
+    it("object and other -> false?", function(){
         expect(false).equal(eq(object, other));
     })
     it("integers 1 and 1 -> true?", function(){

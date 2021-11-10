@@ -3,7 +3,7 @@ import {expect} from 'chai';
 
 const object = { 'a': 1 }
 const other = { 'a': 1 }
-
+//check
 describe("eq", function(){
     it("object and object -> true?", function(){
         expect(true).equal(eq(object, object));

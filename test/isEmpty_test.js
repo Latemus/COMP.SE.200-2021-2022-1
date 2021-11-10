@@ -23,7 +23,7 @@ describe('isEmpty', function(){
     it('try with empty array -> false?', function(){
         expect(true).equal(isEmpty([]));
     })
-    it('try with empty array -> false?', function(){
+    it('try with empty object -> false?', function(){
         expect(true).equal({});
     })
 })

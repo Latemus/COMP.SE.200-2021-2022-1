@@ -6,4 +6,4 @@ install:
   - npm ci
 
  script:
-  - npm test:bin/coveralls.js
+  - npm test | bin/coveralls.js

@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "istanbul cover --no-default-excludes ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec | coveralls",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "test": "istanbul cover --no-default-excludes --reporter=html --reporter=text ./node_modules/mocha/bin/_mocha",
+    "coverage": "istanbul report --reporter=text-lcov | coveralls"
   },
   "author": "",
   "license": "MIT",

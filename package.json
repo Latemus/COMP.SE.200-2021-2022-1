@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "test": "mocha './test/**.js' --exit",
     "testexit": "mocha --exit",
-    "test":"mocha",
-    "coverage": "nyc _mocha",
-    "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "coverage": "istanbul cover npm run test --no-default-excludes --report lcovonly -- -R spec"
   },
   "author": "",
   "license": "MIT",

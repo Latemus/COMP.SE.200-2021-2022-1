@@ -5,8 +5,8 @@ node_js:
 script:
   - npm test
   - ./node_modules/.bin/jscoverage lib lib-cov
-  - ./node_modules/.bin/mocha /test/**.js -R mocha-lcov-reporter | mocha --exit | ./node_modules/coveralls/bin/coveralls.js
+  -  nyc ./node_modules/.bin/mocha /test/*.js -R mocha-lcov-reporter | mocha --exit | ./node_modules/coveralls/bin/coveralls.js
 
 after_success:
 - ./node_modules/.bin/jscoverage lib lib-cov
-- ./node_modules/.bin/mocha YOUR_TESTS/**.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
+- nyc ./node_modules/.bin/mocha YOUR_TESTS/**.js -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js

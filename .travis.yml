@@ -2,8 +2,8 @@ sudo: false
 language: node_js
 node_js:  
   - node
-before_install:
-  - npm install -g codecov
+install: npm install
 script:
-  - nyc --reporter=lcov mocha && codecov
-  - codecov
+  - npm run test
+
+after_success: npm run coverage

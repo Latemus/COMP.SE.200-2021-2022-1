@@ -11,8 +11,7 @@
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "coveralls": "^3.1.1",
     "jest": "^27.3.1",
@@ -20,7 +19,8 @@
   },
   "jest": {
     "testMatch": [
-      "**/tests/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"
+      "**/tests/**/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[jt]s?(x)"
     ],
     "transform": {},
     "coveragePathIgnorePatterns": [

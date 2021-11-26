@@ -1,6 +1,4 @@
-import { assert } from 'chai';
 import difference from '../src/difference.js';
-
 
 let testCases = [
    { a: [], b: [], result: [] },
@@ -46,14 +44,13 @@ const printArray = (array) => {
 }
 
 
-describe('Difference of lists', () => {
+
    // Test all the test cases above
    for (let testCase of testCases) {
       it(`When a is ${printArray(testCase.a)} and b is ${printArray(testCase.b)}, the result is an array and difference is ${printArray(testCase.result)}`, () => {
          let returnValue = difference(testCase.a, testCase.b)
-         assert.equal(Array.isArray(returnValue), true) && assert.equal(!returnValue.length || returnValue.equal(testCase.result));
+         expect(Array.isArray(returnValue)).toBe(true) && expect(!returnValue.length || returnValue.equal(testCase.result).toBe(true));
       });
    }
-});
 
 

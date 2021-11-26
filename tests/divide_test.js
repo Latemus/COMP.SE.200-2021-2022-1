@@ -1,4 +1,3 @@
-import { assert } from 'chai';
 import divide from '../src/divide.js';
 
 // These are simple test cases with numeric values
@@ -21,20 +20,19 @@ let testCases = [
 ]
 
 
-describe('Division of numbers', () => {
-   // Test all the test cases above
-   for (let testCase of testCases) {
-      it(`When a is ${testCase.a} and b is ${testCase.b}, the division a / b should return ${testCase.result}`, () => {
-         assert.equal(divide(testCase.a, testCase.b), testCase.result);
-      });
-   }
 
-   // Test other special cases
-   it(`When a is 0 and b is 0, the division a / b should return NaN`, () => {
-      assert.equal(isNaN(divide( 0, 0)), true);
+// Test all the test cases above
+for (let testCase of testCases) {
+   test(`When a is ${testCase.a} and b is ${testCase.b}, the division a / b should return ${testCase.result}`, () => {
+      expect(divide(testCase.a, testCase.b)).toBe(testCase.result);
    });
-   it(`When a is NaN and b is 1, the division a / b should return NaN`, () => {
-      assert.equal(isNaN(divide( NaN, 1)), true);
-   });
+}
+
+// Test other special cases
+test(`When a is 0 and b is 0, the division a / b should return NaN`, () => {
+   expect(isNaN(divide( 0, 0))).toBe(true);
+});
+test(`When a is NaN and b is 1, the division a / b should return NaN`, () => {
+   expect(isNaN(divide( NaN, 1))).toBe(true);
 });
 

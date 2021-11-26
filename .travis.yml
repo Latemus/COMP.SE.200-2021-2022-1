@@ -6,9 +6,5 @@ install: npm install
 script:
   - npm run test
 
-after_success: 
-  - npm run coveralls
-  - npm run coveralls_v2
-after_failure: 
-  - npm run coveralls
-  - npm run coveralls_v2
+after_script:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js

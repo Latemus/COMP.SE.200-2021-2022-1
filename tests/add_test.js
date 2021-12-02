@@ -6,7 +6,6 @@ let testCases = [
    { a: -1, b: 0, result: -1 },
    { a: -1, b: -1, result: -2 },
    { a: 0.6, b: 0.2, result: 0.8 },
-   { a: '0', b: 1, result: 1 },
    { a: 1, b: 0, result: 1 },
    { a: Infinity, b: 10, result: Infinity },
    { a: -Infinity, b: 0, result: -Infinity },
@@ -36,8 +35,11 @@ test(`When a is -Infinity and b is Infinity, the sum a + b should return NaN`, (
 test(`When a is NaN and b is 1, the sum a + b should return NaN`, () => {
    expect(isNaN(add( NaN, 1))).toBe(true);
 });
-test(`When a is empty string and b is 1, the sum a + b should return 1`, () => {
-   expect(add( "", 1)).toBe(1);
+test(`When a is string and b is 1, the sum a + b should return NaN`, () => {
+   expect(isNaN(add( "1", 1))).toBe(true);
+});
+test(`When a is empty string and b is 1, the sum a + b should return NaN`, () => {
+   expect(isNaN(add( "", 1))).toBe(true);
 });
 test(`When a is null and b is 1, the sum a + b should return 1`, () => {
    expect(add( null, 1)).toBe(1);

@@ -44,3 +44,6 @@ test(`When a is empty string and b is 1, the sum a + b should return NaN`, () =>
 test(`When a is null and b is 1, the sum a + b should return 1`, () => {
    expect(add( null, 1)).toBe(1);
 });
+test(`When a is null and b is null, the sum a + b should return 0`, () => {
+   expect(add( null, null)).toBe(0);
+});

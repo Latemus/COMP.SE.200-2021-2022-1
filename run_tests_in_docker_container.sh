@@ -1,0 +1,1 @@
+docker build -t comp.se.200-test-js-library:latest "." && docker run comp.se.200-test-js-library

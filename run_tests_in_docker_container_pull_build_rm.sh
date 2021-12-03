@@ -1,0 +1,1 @@
+docker build --rm --pull -t comp.se.200-test-js-library:latest "." && docker run --rm comp.se.200-test-js-library

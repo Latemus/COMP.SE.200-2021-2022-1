@@ -1,6 +1,7 @@
 import difference from '../src/difference.js';
 
 let testCases = [
+   { a: null, b: null },
    { a: [], b: [], result: [] },
    { a: [1], b: [1], result: [] },
    { a: [1, 2, 3], b: [4, 5, 6], result: [1, 2, 3] },
@@ -14,6 +15,12 @@ let testCases = [
 // Just helper function for visualizing input and output
 const printArray = (array) => {
    let arrayString = '['
+   if (array === null) {
+      return "null"
+   }
+   if (array === undefined) {
+      return "undefined"
+   }
    for (let i = 0; i < array.length; i++) {
       if (i > 0 && array.length > 1) {
          arrayString += ', '

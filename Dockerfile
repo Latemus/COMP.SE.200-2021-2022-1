@@ -3,7 +3,7 @@ FROM node:14.15.4
 
 ENV NODE_ENV=development
 
-WORKDIR /app
+WORKDIR /test_suite
 
 COPY ["package.json", "package-lock.json*", "./"]
 
@@ -11,4 +11,6 @@ RUN npm install
 
 COPY . .
 
-CMD [ "npm", "run", "test" ]
+RUN chmod -x ./bootstrap.sh
+
+ENTRYPOINT [ "./bootstrap.sh" ]

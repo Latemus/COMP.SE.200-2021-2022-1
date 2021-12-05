@@ -15,3 +15,6 @@ it('try with empty array', function(){
 it('try with an array inside an array', function(){
     expect([]).toEqual(drop([[1, 2]]));
 })
+it('try without an array', function(){
+    expect(0).toEqual(drop());
+})

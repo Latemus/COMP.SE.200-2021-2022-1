@@ -12,3 +12,9 @@ test('try with Infinity -> Infinity?', function(){
 test('try with \'3.2\' -> 3.2?', function(){
     expect(3.2).toBe(toNumber('3.2'));
 })
+test('try with object 2', function(){
+    expect(2).toBe(toNumber(new Object(2)));
+})
+test('try with binary 0010', function(){
+    expect(2).toBe(toNumber('0010'));
+})

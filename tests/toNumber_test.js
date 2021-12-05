@@ -19,5 +19,5 @@ test('try with binary Uint8Array(2)', function(){
     expect(2).toBe(toNumber(new Uint8Array(2)));
 })
 test('try with a symbol', function(){
-    expect(NAN).toBe(toNumber(new Symbol("2")));
+    expect(NaN).toBe(toNumber(Symbol(2)));
 })

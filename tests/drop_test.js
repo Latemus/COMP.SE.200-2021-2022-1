@@ -15,9 +15,9 @@ it('try with empty array', function(){
 it('try with an array inside an array', function(){
     expect([]).toEqual(drop([[1, 2]]));
 })
-it('try with null value, should return 0', function(){
-    expect(0).toEqual(drop(null));
-})
 it('drop over the length of an array', function(){
     expect([]).toEqual(drop([1, 2, 3], 5));
+})
+it('drop none', function(){
+    expect([1, 2, 3]).toEqual(drop([1, 2, 3], 0));
 })

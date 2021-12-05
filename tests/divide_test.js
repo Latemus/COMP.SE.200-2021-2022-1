@@ -7,8 +7,6 @@ let testCases = [
    { a: -1, b: -1, result: 1 },
    { a: 0.6, b: 0.2, result: 3 },
    { a: 0.6, b: 1200, result: 0.0005 },
-   { a: '0', b: 1, result: 0 },
-   { a: '', b: 1, result: 0 },
    { a: null, b: 1, result: 0 },
    { a: 0, b: 1, result: 0 },
    { a: 1, b: 0, result: Infinity },
@@ -24,6 +22,7 @@ let testCases = [
 // Test all the test cases above
 for (let testCase of testCases) {
    test(`When a is ${testCase.a} and b is ${testCase.b}, the division a / b should return ${testCase.result}`, () => {
+      expect(Number(divide(testCase.a, testCase.b))).not.toBeNaN();
       expect(divide(testCase.a, testCase.b)).toBe(testCase.result);
    });
 }
@@ -34,5 +33,14 @@ test(`When a is 0 and b is 0, the division a / b should return NaN`, () => {
 });
 test(`When a is NaN and b is 1, the division a / b should return NaN`, () => {
    expect(isNaN(divide( NaN, 1))).toBe(true);
+});
+test(`When a is '0' and b is 1, the division a / b should return NaN`, () => {
+   expect(isNaN(divide('0', 1))).toBe(true);
+});
+test(`When a is 1 and b is '1', the division a / b should return NaN`, () => {
+   expect(isNaN(divide('1', 1))).toBe(true);
+});
+test(`When a is 'test' and b is 'test', the division a / b should return NaN`, () => {
+   expect(isNaN(divide('test', 'test'))).toBe(true);
 });
 

@@ -1,5 +1,6 @@
 import difference from '../src/difference.js';
 
+//Check [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
 const testCases = [
    { a: null, b: null, result: [] },
    { a: [], b: [], result: [] },
@@ -12,8 +13,8 @@ const testCases = [
    { a: [+0], b: [-0], result: [] },
    { a: [Number, 1, 'a'], b: [Number, '1', 'a'], result: [1] },
    { a: [null, NaN, ''], b: [null, NaN], result: [''] },
-   { a: [[1], [2]], b: [[2]], result: [[1], [2]] }, //Check [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
-   { a: [[1], {a: 1}, [], {}], b: [[1], {a: 1}, [], {}], result: [[1], {a: 1}, [], {}] } //Check [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+   { a: [[1], [2]], b: [[2]], result: [[1], [2]] },
+   { a: [[1], {a: 1}, [], {}], b: [[1], {a: 1}, [], {}], result: [[1], {a: 1}, [], {}] }
 ];
 
 // Test all the test cases above

@@ -32,7 +32,7 @@
       [
         "./node_modules/jest-html-reporter",
         {
-          "includeSuiteFailure": true
+          "sort": "titleAsc"
         }
       ]
     ]

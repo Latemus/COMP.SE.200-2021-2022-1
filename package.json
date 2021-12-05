@@ -14,6 +14,7 @@
   "devDependencies": {
     "coveralls": "^3.1.1",
     "jest": "^27.3.1",
+    "jest-html-reporter": "^3.4.2",
     "webpack": "^5.64.4"
   },
   "jest": {
@@ -25,6 +26,15 @@
     "coveragePathIgnorePatterns": [
       "node_modules",
       "src/.internal"
+    ],
+    "reporters": [
+      "default",
+      [
+        "./node_modules/jest-html-reporter",
+        {
+          "includeSuiteFailure": true
+        }
+      ]
     ]
   }
 }

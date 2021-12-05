@@ -1,3 +1,6 @@
+# Projects ignores
+test-report.html
+
 # Logs
 logs
 *.log

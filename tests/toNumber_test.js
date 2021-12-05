@@ -21,3 +21,9 @@ test('try with binary Uint8Array(2)', function(){
 test('try with a symbol', function(){
     expect(NaN).toBe(toNumber(Symbol(2)));
 })
+test('try binary string', function(){
+    expect(2).toBe(toNumber('0010'));
+})
+test('try octal string', function(){
+    expect(12321).toBe(toNumber('30041'));
+})

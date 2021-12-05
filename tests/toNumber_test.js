@@ -18,3 +18,6 @@ test('try with object 2', function(){
 test('try with binary 0010', function(){
     expect(2).toBe(toNumber('0010'));
 })
+test('try with a symbol', function(){
+    expect(NaN).toBe(toNumber(new Symbol()));
+})

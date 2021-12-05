@@ -12,3 +12,6 @@ it('try with array of single value', function(){
 it('try with empty array', function(){
     expect([]).toEqual(drop([]));
 })
+it('try with an array inside an array', function(){
+    expect([]).toEqual(drop([[1, 2]]));
+})

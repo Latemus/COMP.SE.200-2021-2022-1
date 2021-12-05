@@ -22,3 +22,6 @@ it("boolean true and integer 1 -> false?", function(){
 it("NaN and NaN -> true?", function(){
     expect(true).toBe(eq(NaN, NaN));
 })
+it("+0 and -0 -> true?", function(){
+    expect(true).toBe(eq(0, -0));
+})

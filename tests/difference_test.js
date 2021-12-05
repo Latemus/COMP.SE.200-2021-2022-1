@@ -1,16 +1,31 @@
 import difference from '../src/difference.js';
 
-let testCases = [
-   { a: null, b: null },
+const testCases = [
+   { a: null, b: null, result: [] },
    { a: [], b: [], result: [] },
    { a: [1], b: [1], result: [] },
    { a: [1, 2, 3], b: [4, 5, 6], result: [1, 2, 3] },
    { a: [1, 2], b: [2, 3], result: [1] },
    { a: [1, 2, 3], b: [3, 1, 2], result: [] },
-   { a: [Number, 1, 'a'], b: [Number, '1', 'a'], result: [] },
-   { a: [null, NaN, ''], b: [null, NaN], result: [NaN, ''] },
-   { a: [[1], {a: 1}, [], {}], b: [[1], {a: 1}, [], {}], result: [] },
+   { a: [1, 2, 3], b: ['3', '1', '2'], result: [1, 2, 3] },
+   { a: [-0], b: [+0], result: [] },
+   { a: [+0], b: [-0], result: [] },
+   { a: [Number, 1, 'a'], b: [Number, '1', 'a'], result: [1] },
+   { a: [null, NaN, ''], b: [null, NaN], result: [''] },
+   { a: [[1], [2]], b: [[2]], result: [[1], [2]] }, //Check [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+   { a: [[1], {a: 1}, [], {}], b: [[1], {a: 1}, [], {}], result: [[1], {a: 1}, [], {}] } //Check [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
 ];
+
+// Test all the test cases above
+const runtest = () => {
+   for (let testCase of testCases) {
+      test(`When a is ${printArray(testCase.a)} and b is ${printArray(testCase.b)}, the result is an array and difference is ${printArray(testCase.result)}`, () => {
+         let returnValue = difference(testCase.a, testCase.b)
+         expect(Array.isArray(returnValue)).toBe(true); 
+         expect(returnValue).toEqual(testCase.result);
+      });
+   }
+}
 
 // Just helper function for visualizing input and output
 const printArray = (array) => {
@@ -51,14 +66,4 @@ const printArray = (array) => {
    return arrayString += ']'
 }
 
-// Test all the test cases above
-for (let testCase of testCases) {
-   it(`When a is ${printArray(testCase.a)} and b is ${printArray(testCase.b)}, the result is an array and difference is ${printArray(testCase.result)}`, () => {
-      let returnValue = difference(testCase.a, testCase.b)
-      expect(Array.isArray(returnValue)).toBe(true) && expect(returnValue).toEqual(testCase.result);
-   });
-}
-
-
-
-
+runtest();

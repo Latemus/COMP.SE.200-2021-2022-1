@@ -9,3 +9,7 @@ test("tries string Mon April 23 2012, should return false", function(){
 test("tries Object(Mon April 23 2012), should return false", function(){
     expect(false).toEqual(isDate(Object('Mon April 23 2012')));
 })
+
+test("checks if passed object is a date object", function(){
+    expect(true).toEqual(isDate(new Date.now()));
+})

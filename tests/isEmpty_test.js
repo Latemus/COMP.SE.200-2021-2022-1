@@ -24,3 +24,6 @@ test('try with empty array -> false?', function(){
 test('try with empty object -> false?', function(){
     expect(true).toBe(isEmpty({}));
 })
+test('try with an empty array -> true?', function(){
+    expect(true).toBe(isEmpty([]));
+})

@@ -11,6 +11,6 @@ RUN npm install
 
 COPY . .
 
-RUN chmod -x ./bootstrap.sh
+RUN chmod +x ./bootstrap.sh
 
 ENTRYPOINT [ "./bootstrap.sh" ]

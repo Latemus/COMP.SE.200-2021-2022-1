@@ -22,8 +22,10 @@ let testCases = [
 
 
 // Test all the test cases above
+// First test that the result is of type number and after than check that the result is equal to the expected
 for (let testCase of testCases) {
    test(`When a is ${testCase.a} and b is ${testCase.b}, the sum a + b should return ${testCase.result}`, () => {
+      expect(Number(add(testCase.a, testCase.b))).not.toBeNaN();
       expect(add(testCase.a, testCase.b)).toBe(testCase.result);
    });
 }

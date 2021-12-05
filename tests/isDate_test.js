@@ -10,5 +10,6 @@ test("tries Object(Mon April 23 2012), should return false", function(){
     expect(false).toEqual(isDate(Object('Mon April 23 2012')));
 })
 test("checks if new Date.now() returns a Date object.", function(){
-    expect(false).toEqual(isDate(new Date.now()));
+    date = new Date();
+    expect(false).toEqual(isDate(date.now()));
 })

@@ -21,3 +21,6 @@ it('drop over the length of an array', function(){
 it('drop none', function(){
     expect([1, 2, 3]).toEqual(drop([1, 2, 3], 0));
 })
+it('drop with null input', function(){
+    expect([]).toEqual(drop(null));
+})

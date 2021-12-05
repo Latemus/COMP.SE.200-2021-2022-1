@@ -27,11 +27,8 @@ test('try with empty object -> false?', function(){
 test('try with an empty array -> true?', function(){
     expect(true).toBe(isEmpty([]));
 })
-test('try with a filled map object -> false?', function(){
-    expect(false).toBe(isEmpty(new Map(set('a', 1))));
-})
-test('try with an empty map object -> false?', function(){
-    expect(false).toBe(isEmpty(new Map()));
+test('try with an empty map object -> true?', function(){
+    expect(true).toBe(isEmpty(new Map()));
 })
 test('try with a filled array -> false?', function(){
     expect(false).toBe(isEmpty(['a', 'b', 'c']));

@@ -43,4 +43,8 @@ test(`Given array of both truthy and falsy values, an array with only truthy val
    expect(compact(inputArray_truthy.concat(inputArray_falsy).concat(inputArray_truthy).concat(inputArray_falsy)))
       .toEqual(inputArray_truthy.concat(inputArray_truthy));
 })
+test(`Given array of both truthy and falsy values, an array with only truthy values is returned`, () => {
+   expect(compact(inputArray_falsy.concat(inputArray_truthy).concat(inputArray_falsy).concat(inputArray_truthy)))
+      .toEqual(inputArray_truthy.concat(inputArray_truthy));
+})
 

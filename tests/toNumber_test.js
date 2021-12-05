@@ -15,8 +15,8 @@ test('try with \'3.2\' -> 3.2?', function(){
 test('try with object 2', function(){
     expect(2).toBe(toNumber(new Object(2)));
 })
-test('try with binary 0010', function(){
-    expect(2).toBe(toNumber('0010'));
+test('try with binary Uint8Array(2)', function(){
+    expect(2).toBe(toNumber(new Uint8Array(2)));
 })
 test('try with a symbol', function(){
     expect(NaN).toBe(toNumber(new Symbol()));

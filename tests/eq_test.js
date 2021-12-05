@@ -23,5 +23,14 @@ it("NaN and NaN -> true?", function(){
     expect(true).toBe(eq(NaN, NaN));
 })
 it("+0 and -0 -> true?", function(){
-    expect(true).toBe(eq(0, -0));
+    expect(true).toBe(eq(+0, -0));
+})
+it("-0 and +0 -> true?", function(){
+    expect(true).toBe(eq(-0, +0));
+})
+it("1 and 2 -> false?", function(){
+    expect(false).toBe(eq(1, 2));
+})
+it("int and string -> false?", function(){
+    expect(false).toBe(eq(1, "2"));
 })

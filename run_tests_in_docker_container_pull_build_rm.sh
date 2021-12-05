@@ -2,10 +2,7 @@
 # - build latest node image
 # - build docker image from it
 # - run the image as container
-# - after exit remove that container
-# docker build --rm --pull -t comp.se.200-test-js-library:latest "." \
-#     && docker run --rm comp.se.200-test-js-library \
-#     && docker rmi comp.se.200-test-js-library
+# - after exit remove that container and it's image
 
 docker build --rm --pull -t comp.se.200-test-suite:latest "."
 
